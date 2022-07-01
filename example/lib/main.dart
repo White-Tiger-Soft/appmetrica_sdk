@@ -1,9 +1,8 @@
 import 'dart:async';
 
+import 'package:appmetrica_sdk/appmetrica_sdk.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-
-import 'package:appmetrica_sdk/appmetrica_sdk.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -67,14 +66,14 @@ class _MyAppState extends State<MyApp> {
                       child: Text(
                           'AppMetrica SDK Library version: $_libraryVersion\n'),
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       child: const Text('Send a custom event'),
                       onPressed: () {
                         /// Sending a custom event without nested parameters.
                         AppmetricaSdk().reportEvent(name: 'Updates installed');
                       },
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       child: const Text(
                           'Send a custom event with nested parameters'),
                       onPressed: () {
@@ -91,7 +90,7 @@ class _MyAppState extends State<MyApp> {
                             });
                       },
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       child: const Text('Send user profile attributes'),
                       onPressed: () {
                         /// Sending profile custom string attribute.
@@ -123,7 +122,7 @@ class _MyAppState extends State<MyApp> {
                             notificationsEnabled: true);
                       },
                     ),
-                    RaisedButton(
+                    ElevatedButton(
                       child:
                           const Text('Send referral URL for this installation'),
                       onPressed: () {
